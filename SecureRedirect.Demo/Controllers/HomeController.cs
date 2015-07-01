@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SecureRedirect.Web;
 using System.Configuration;
+using System.Net;
 
 namespace SecureRedirect.Demo.Controllers
 {
@@ -20,9 +21,7 @@ namespace SecureRedirect.Demo.Controllers
 
         public ActionResult SRedirect()
         {
-
             return Redirect(SecureUrlBuilder.Create("/Gateway/Index", new { Param1 = "Alice", Param2 = "Bob" }, null, ConfigurationManager.AppSettings["publickey"]));
         }
-
     }
 }
