@@ -25,12 +25,14 @@ public ActionResult SRedirect()
 }
 ```
 改造主要是对原来要重定向的地址进行包装，里面用到了`SecureUrlBuilder.Create`方法，参数如下：
+
 |参数|类型|说明|
-|---|---|---|
-|urlpath|String|URL路径（不包括参数部分）
-|querystring|Object|URL参数
-|form|Object|Form参数
-|publickey|String|对参数加密的`公钥`
+|------|:-------:|-----------------|
+|urlpath|String|URL路径（不包括参数部分）|
+|querystring|Object|URL参数|
+|form|Object|Form参数|
+|publickey|String|对参数加密的`公钥`|
+
 ##接收方改造
 原有代码：
 ```C#
@@ -54,8 +56,9 @@ public class GatewayController : Controller
 }
 ```
 改造的方式是在Action上增加了特性`[SecureRedirect.Web.Attribute.SecureRequest]`，构造方法参数如下：
+
 |参数|类型|说明|
-|---|---|---|
-|privatekey|String|私钥在Web.config文件`AppSettings`中的Key|
+|------|------|------|
+|privatekey|String|私钥在Web.config文件`AppSettings`中的Key
 ##结束语
 这个项目比较简单。且目前只引用与ASP.NET MVC项目。后期将会初步拓展。
