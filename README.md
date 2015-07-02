@@ -56,6 +56,6 @@ public class GatewayController : Controller
 改造的方式是在Action上增加了特性`[SecureRedirect.Web.Attribute.SecureRequest]`，构造方法参数如下：
 |参数|类型|说明|
 |---|---|---|
-|privatekey|String|私钥在Web.config文件`AppSettings`中的Key
+|privatekey|String|私钥在Web.config文件`AppSettings`中的Key|
 ##结束语
 这个项目比较简单。且目前只引用与ASP.NET MVC项目。后期将会初步拓展。
